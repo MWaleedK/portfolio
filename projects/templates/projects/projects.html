@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects</title>
+
+    <link rel="stylesheet" href="{% static 'projects/css/projects.css' %}">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Projects</h1>
+
+        {% for project in projects %}
+
+            <article>
+
+                <h2>{{ project.title }}</h2>
+
+                <p>
+                    {{ project.description }}
+                </p>
+
+                <p>
+                    {{ project.technologies }}
+                </p>
+
+                {% if project.github_url %}
+                    <a href="{{ project.github_url }}" target="_blank">
+                        GitHub
+                    </a>
+                {% endif %}
+
+                {% if project.linkedin_url %}
+                    <a href="{{ project.linkedin_url }}" target="_blank">
+                        LinkedIn
+                    </a>
+                {% endif %}
+
+            </article>
+
+        {% empty %}
+
+            <p>No projects available.</p>
+
+        {% endfor %}
+
+    </main>
+
+    <script src="{% static 'projects/js/projects.js' %}"></script>
+
+</body>
+</html>

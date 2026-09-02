@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact</title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'contact/css/contact.css' %}"
+    >
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Contact Me</h1>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </main>
+
+    <script src="{% static 'contact/js/contact.js' %}"></script>
+
+</body>
+
+</html>

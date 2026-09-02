@@ -8,6 +8,7 @@ class ContactMessage(models.Model):
     message = models.TextField()
 
     created_at = models.DateTimeField(auto_now_add=True)
+    read = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["-created_at"]
