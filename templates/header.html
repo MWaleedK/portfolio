@@ -1,0 +1,23 @@
+<header class="site-header gradient-container">
+
+    <nav>
+        {% if request.resolver_match.url_name != 'home' %}
+            <a class="gradient-text" href="{% url 'home' %}">
+                Home
+            </a>
+        {% endif %}
+
+        {% if request.resolver_match.url_name != 'projects' %}
+            <a class="gradient-text" href="{% url 'projects' %}">
+                Projects
+            </a>
+        {% endif %}
+
+        {% if request.resolver_match.url_name != 'contact' %}
+            <a class="gradient-text" href="{% url 'contact' %}">
+                Contact
+            </a>
+        {% endif %}
+    </nav>
+
+</header>

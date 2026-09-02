@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ project.title }}
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+
+    <link
+        rel="stylesheet"
+        href="{% static 'projects/css/project_detail.css' %}"
+    >
+{% endblock %}
+
+{% block content %}
+
+    <main class="detail-page">
+
+        <a href="{% url 'projects' %}" class="detail-back">&larr; Back to Projects</a>
+
+        <h1 class="detail-title">{{ project.title }}</h1>
+
+        <p class="detail-description">{{ project.description }}</p>
+
+        {% if project.technologies %}
+            <div class="detail-section">
+                <h2 class="detail-subheading">Technologies</h2>
+                <p class="detail-tech">{{ project.technologies }}</p>
+            </div>
+        {% endif %}
+
+        <div class="detail-links">
+
+            {% if project.project_url %}
+                
+                    <a href="{{ project.project_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn">
+                
+                    Visit Project
+                </a>
+            {% endif %}
+
+            {% if project.github_url %}
+                
+                    href="{{ project.github_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline"
+                >
+                    GitHub
+                </a>
+            {% endif %}
+
+            {% if project.linkedin_url %}
+                
+                    href="{{ project.linkedin_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline"
+                >
+                    LinkedIn
+                </a>
+            {% endif %}
+
+        </div>
+
+    </main>
+
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+
+    <script src="{% static 'projects/js/project_detail.js' %}"></script>
+{% endblock %}

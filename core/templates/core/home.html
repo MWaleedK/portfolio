@@ -1,22 +1,99 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}
+Home
+{% endblock %}
 
-    <title>Portfolio</title>
+{% block css %}
+{{ block.super }}
 
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-</head>
 
-<body>
+<link
+    rel="stylesheet"
+    href="{% static 'core/css/style.css' %}"
+>
 
-    <!-- Your HTML goes here -->
-    <h1>About Me</h1>
 
-    <!-- end -->
-    <script src="{% static 'core/js/script.js' %}"></script>
-</body>
-</html>
+{% endblock %}
+
+{% block content %}
+
+
+<section class="hero">
+
+    <img
+        src="{% static 'img/profile.jpg' %}"
+        alt="Muhammad Waleed Khan"
+        class="hero-avatar"
+    >
+
+    <h1 class="hero-name">
+        Muhammad Waleed Khan
+    </h1>
+
+    <h2 class="hero-title">
+        Backend Developer
+    </h2>
+
+    <p class="hero-tags">
+        Python &middot;
+        Django &middot;
+        Flask &middot;
+        REST APIs &middot;
+        EDI &middot;
+        Cloud Deployment
+    </p>
+
+    <p class="hero-bio">
+        Computer Engineering graduate building backend systems
+        with Django, Flask, and PostgreSQL.
+        Experienced in EDI integration (EDIFACT / ANSI X12),
+        blockchain development, and deploying production
+        applications on Linux with Docker, Nginx, and Gunicorn.
+    </p>
+
+    <div class="hero-links">
+
+        <a
+            href="mailto:waleedjaved911@gmail.com"
+            class="btn"
+        >
+            Email Me
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/mwaleedk911/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+        >
+            LinkedIn
+        </a>
+
+        <a
+            href="https://github.com/MWaleedK"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+        >
+            GitHub
+        </a>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+
+
+<script
+    src="{% static 'core/js/script.js' %}"
+></script>
+
+
+{% endblock %}

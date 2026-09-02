@@ -1,0 +1,56 @@
+.gradient-container {
+    background: linear-gradient(
+        90deg,
+        #7b2ff7, #2b8fd6, #22c55e, #eab308, #f97316, #ef4444, #7b2ff7
+    );
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+    padding: 1rem 1.5rem;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.site-header nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.site-footer {
+    text-align: center;
+}
+
+.gradient-text {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.gradient-text:hover {
+    opacity: 0.85;
+}
+
+.site-content {
+    min-height: 70vh;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

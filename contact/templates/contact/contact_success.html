@@ -1,38 +1,41 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}
+    Message Sent
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Message Sent</title>
+{% block css %}
+    {{ block.super }}
 
     <link
         rel="stylesheet"
-        href="{% static 'contact/css/contact.css' %}"
+        href="{% static 'contact/css/contact_success.css' %}"
     >
-</head>
+{% endblock %}
 
-<body>
+{% block content %}
 
-    <main>
+    <main class="success-page">
 
-        <h1>Message Sent</h1>
+        <div class="success-icon">&#10003;</div>
 
-        <p>
+        <h1 class="success-heading">Message Sent</h1>
+
+        <p class="success-text">
             Thanks for getting in touch. I'll get back to you soon.
         </p>
 
-        <a href="{% url 'home' %}">
+        <a href="{% url 'home' %}" class="btn">
             Back to Home
         </a>
 
     </main>
 
-    <script src="{% static 'contact/js/contact.js' %}"></script>
+{% endblock %}
 
-</body>
+{% block js %}
+    {{ block.super }}
 
-</html>
+    <script src="{% static 'contact/js/contact_success.js' %}"></script>
+{% endblock %}

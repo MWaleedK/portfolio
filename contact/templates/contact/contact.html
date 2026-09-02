@@ -1,33 +1,36 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}
+    Contact
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Contact</title>
+{% block css %}
+    {{ block.super }}
 
     <link
         rel="stylesheet"
         href="{% static 'contact/css/contact.css' %}"
     >
-</head>
+{% endblock %}
 
-<body>
+{% block content %}
 
-    <main>
+    <main class="contact-page">
 
-        <h1>Contact Me</h1>
+        <p class="contact-eyebrow">Get In Touch</p>
+        <h1 class="contact-heading">Contact Me</h1>
+        <p class="contact-subtext">
+            Have a project in mind or just want to say hi? Drop me a message below.
+        </p>
 
-        <form method="POST">
+        <form method="POST" class="contact-form">
 
             {% csrf_token %}
 
             {{ form.as_p }}
 
-            <button type="submit">
+            <button type="submit" class="btn contact-submit">
                 Send Message
             </button>
 
@@ -35,8 +38,10 @@
 
     </main>
 
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+
     <script src="{% static 'contact/js/contact.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock %}
